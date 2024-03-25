@@ -17,6 +17,7 @@ public class RadioButtonGroup : MonoBehaviour
 
     private void Awake()
     {
+        SelectedButton = ClickedOnAwakeButton;
         if (!RadioButtons.Contains(ClickedOnAwakeButton))
         {
             Debug.LogError("RadioButtons does not contain ClickedOnAwakeButton");

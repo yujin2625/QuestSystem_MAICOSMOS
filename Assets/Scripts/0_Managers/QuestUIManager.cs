@@ -27,12 +27,12 @@ public class QuestUIManager : MonoBehaviour
 
     private Quest m_SelectedQuest;
 
-    private void Start()
-    {
-        OnClickQuest();
-    }
     public void OnClickQuest()
     {
+        m_StartedQuests.Clear();
+        m_CompletedQuests.Clear();
+        m_DailyQuests.Clear();
+        m_WeeklyQuests.Clear();
         StartCoroutine(SetQuestUI());
     }
     private IEnumerator SetQuestUI()
@@ -96,6 +96,7 @@ public class QuestUIManager : MonoBehaviour
             QuestRewardText.text = "";
             return;
         }
+        
         Quest quest = quests[QuestRadioButtonGroup.SelectedButtonIndex];
         if (quest == null)
         {
