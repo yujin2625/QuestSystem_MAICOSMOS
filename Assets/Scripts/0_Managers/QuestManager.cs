@@ -45,21 +45,21 @@ public class QuestManager : MonoBehaviour
     {
         quest.NextStep();
     }
-    public void NextStep(QuestScriptableObject quest)
+    public void NextStep(QuestScriptableObject questSO)
     {
-        foreach(Quest q in Quests)
+        foreach (Quest quest in Quests)
         {
-            if(q.QuestID == quest.QuestID)
+            if (quest.QuestID == questSO.QuestID)
             {
-                q.NextStep();
+                quest.NextStep();
             }
         }
     }
     public void NextStep(string questID)
     {
-        foreach(Quest quest in Quests)
+        foreach (Quest quest in Quests)
         {
-            if(quest.QuestID == questID)
+            if (quest.QuestID == questID)
                 quest.NextStep();
         }
     }

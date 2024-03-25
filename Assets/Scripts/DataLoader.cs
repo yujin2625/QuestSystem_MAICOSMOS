@@ -9,15 +9,14 @@ using UnityEngine.Networking;
 
 public class DataLoader : MonoBehaviour
 {
-    public string m_returnedData;
+    public string ReturnedData { get { return m_returnedData; } }
+    private string m_returnedData = null;
 
     //https://maicosmos.com/yujin/yujin.php
-    public string GetReturnedData(string _url)
+    public void StartWebRequest(string _url)
     {
         StartCoroutine(SendWebRequest(_url));
-        return m_returnedData;
     }
-
     private IEnumerator SendWebRequest(string _url)
     {
         UnityWebRequest webRequest = UnityWebRequest.Get(_url);

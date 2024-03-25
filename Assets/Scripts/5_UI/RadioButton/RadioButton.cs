@@ -10,10 +10,10 @@ public class RadioButton : MonoBehaviour
     [SerializeField] private UnityEvent OnCanceled;
     public void SetRadioOn()
     {
-        OnSelected.Invoke();
+        OnSelected?.Invoke();
     }
     public void SetRadioOff()
     {
-        OnSelected.Invoke();
+        OnCanceled?.Invoke();
     }
 }

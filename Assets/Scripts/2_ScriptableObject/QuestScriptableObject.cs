@@ -4,8 +4,10 @@ using UnityEngine;
 
 public enum EQuestType
 {
+    None,
     Tutorial,
     Daily,
+    Weekly,
     Last
 }
 public enum EConditionType

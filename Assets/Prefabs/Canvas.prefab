@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 4703867613181794887}
   - component: {fileID: 4703867613181794888}
   - component: {fileID: 4703867613181794889}
+  - component: {fileID: 1956091663}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -543,7 +544,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -566,6 +567,48 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 4703867613181794888}
   m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: RadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1956091663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703867613181794891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d8cf89172b8174caffe6abba47e97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCanceled:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4703867613245600707
@@ -695,6 +738,8 @@ MonoBehaviour:
   - {fileID: 508389639}
   - {fileID: 39353329}
   ClickedOnAwakeButton: {fileID: 1025192159}
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  SelectedColor: {r: 1, g: 0.7122642, b: 0.7122642, a: 1}
 --- !u!1 &4703867613327740409
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4703867613327740408
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1644,7 +1689,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCanceled:
     m_PersistentCalls:
       m_Calls: []
@@ -1667,7 +1724,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1692,6 +1749,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: ResetRadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1707412500}
         m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
         m_MethodName: RadioSelected
@@ -1716,6 +1785,7 @@ GameObject:
   - component: {fileID: 4703867613533629470}
   - component: {fileID: 4703867613533629471}
   - component: {fileID: 4703867613533629440}
+  - component: {fileID: 1941986053}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -1800,7 +1870,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1824,6 +1894,48 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4703867613533629471}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: RadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1941986053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703867613533629442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d8cf89172b8174caffe6abba47e97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCanceled:
+    m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4703867613655970495
 GameObject:
@@ -1837,6 +1949,7 @@ GameObject:
   - component: {fileID: 4703867613655970491}
   - component: {fileID: 4703867613655970492}
   - component: {fileID: 4703867613655970493}
+  - component: {fileID: 998383724}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1921,7 +2034,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1945,6 +2058,48 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4703867613655970492}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: RadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &998383724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703867613655970495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d8cf89172b8174caffe6abba47e97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCanceled:
+    m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4703867613782022745
 GameObject:
@@ -1958,6 +2113,7 @@ GameObject:
   - component: {fileID: 4703867613782022741}
   - component: {fileID: 4703867613782022742}
   - component: {fileID: 4703867613782022743}
+  - component: {fileID: 570492261}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -2042,7 +2198,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2066,6 +2222,48 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4703867613782022742}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: RadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &570492261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703867613782022745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d8cf89172b8174caffe6abba47e97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCanceled:
+    m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4703867613863342250
 GameObject:
@@ -2077,6 +2275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4703867613863342249}
   - component: {fileID: 826715696}
+  - component: {fileID: 826715697}
   m_Layer: 5
   m_Name: Quests
   m_TagString: Untagged
@@ -2135,6 +2334,28 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &826715697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703867613863342250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfd36e06a3d1124db04dcf8e9b628b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RadioButtons:
+  - {fileID: 998383724}
+  - {fileID: 1956091663}
+  - {fileID: 565510439}
+  - {fileID: 1941986053}
+  - {fileID: 570492261}
+  - {fileID: 1508792323}
+  ClickedOnAwakeButton: {fileID: 998383724}
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  SelectedColor: {r: 1, g: 0.759434, b: 0.759434, a: 1}
 --- !u!1 &4703867613876590144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,7 +2932,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCanceled:
     m_PersistentCalls:
       m_Calls: []
@@ -2734,7 +2967,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2759,6 +2992,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: ResetRadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1707412500}
         m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
         m_MethodName: RadioSelected
@@ -3129,6 +3374,7 @@ GameObject:
   - component: {fileID: 4703867614424794741}
   - component: {fileID: 4703867614424794742}
   - component: {fileID: 4703867614424794743}
+  - component: {fileID: 565510439}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -3213,7 +3459,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -3236,6 +3482,48 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 4703867614424794742}
   m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: RadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &565510439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703867614424794745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d8cf89172b8174caffe6abba47e97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCanceled:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4703867614445575665
@@ -3464,7 +3752,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCanceled:
     m_PersistentCalls:
       m_Calls: []
@@ -3487,7 +3787,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -3512,6 +3812,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: ResetRadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1707412500}
         m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
         m_MethodName: RadioSelected
@@ -3742,7 +4054,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCanceled:
     m_PersistentCalls:
       m_Calls: []
@@ -3765,7 +4089,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -3790,6 +4114,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: ResetRadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1707412500}
         m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
         m_MethodName: RadioSelected
@@ -4545,7 +4881,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCanceled:
     m_PersistentCalls:
       m_Calls: []
@@ -4568,7 +4916,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4593,6 +4941,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: ResetRadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1707412500}
         m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
         m_MethodName: RadioSelected
@@ -5052,6 +5412,7 @@ GameObject:
   - component: {fileID: 4703867615107977749}
   - component: {fileID: 4703867615107977750}
   - component: {fileID: 4703867615107977751}
+  - component: {fileID: 1508792323}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -5136,7 +5497,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5159,6 +5520,48 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 4703867615107977750}
   m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 826715697}
+        m_TargetAssemblyTypeName: RadioButtonGroup, Assembly-CSharp
+        m_MethodName: RadioSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1508792323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703867615107977753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d8cf89172b8174caffe6abba47e97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
+        m_MethodName: InitQuestUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCanceled:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4703867615148279666

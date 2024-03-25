@@ -12,6 +12,8 @@ public class RadioButtonGroup : MonoBehaviour
     [SerializeField] private Color NormalColor;
     [SerializeField] private Color SelectedColor;
 
+    private RadioButton SelectedButton;
+    public int SelectedButtonIndex { get { return RadioButtons.IndexOf(SelectedButton); } }
 
     private void Awake()
     {
@@ -28,7 +30,7 @@ public class RadioButtonGroup : MonoBehaviour
     }
     private void SetRadioButtonOn(List<RadioButton> radiobuttons, int index)
     {
-        ClickedOnAwakeButton = radiobuttons[index];
+        SelectedButton = radiobuttons[index];
         for (int i = 0; i < radiobuttons.Count; i++)
         {
             if (i == index)
@@ -45,7 +47,7 @@ public class RadioButtonGroup : MonoBehaviour
     }
     private void SetRadioButtonOn(List<RadioButton> radiobuttons, RadioButton button)
     {
-        ClickedOnAwakeButton = button;
+        SelectedButton = button;
         foreach (RadioButton radiobutton in radiobuttons)
         {
             if (button == radiobutton)
@@ -64,5 +66,9 @@ public class RadioButtonGroup : MonoBehaviour
     public void RadioSelected()
     {
         SetRadioButtonOn(RadioButtons, EventSystem.current.currentSelectedGameObject.GetComponent<RadioButton>());
+    }
+    public void ResetRadioSelected()
+    {
+        SetRadioButtonOn(RadioButtons, ClickedOnAwakeButton);
     }
 }
