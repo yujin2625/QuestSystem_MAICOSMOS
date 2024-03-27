@@ -43,6 +43,15 @@ switch ($num_type) {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo $result[0]['mb_point'];
         break;
+    case "mb_present":
+        $sql = "SELECT mb_present FROM yj_mb_quest_num WHERE mb_id = '$userid'"
+        break;
+    case "mb_present_week":
+        break;
+    case "mb_coin":
+        
+        break;
+
 }
 
 

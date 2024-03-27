@@ -11,6 +11,13 @@ public enum ECondition
     UI,
     LAST
 }
+public enum EConditionNumType
+{
+    mb_level,
+    mb_point,
+    mb_present,
+    last
+}
 
 [CreateAssetMenu(fileName = "Step", menuName = "ScriptableObjects/StepScriptableObject", order = 1)]
 public class StepScriptableObject : ScriptableObject
@@ -70,11 +77,4 @@ public class UIStep
 {
     [SerializeField] private string PressedUI;
     public string m_pressedUI { get => PressedUI; set => PressedUI = value; }
-}
-
-public enum EConditionNumType
-{
-    mb_level,
-    mb_point,
-    last
 }

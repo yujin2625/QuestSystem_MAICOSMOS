@@ -10,6 +10,7 @@ public class QuestUIManager : MonoBehaviour
     [SerializeField] private RadioButtonGroup TypeRadioButtonGroup;
     [SerializeField] private RadioButtonGroup QuestRadioButtonGroup;
     [SerializeField] private List<Button> QuestButtons = new List<Button>();
+    [SerializeField] private List<GameObject> QuestButtonChecks = new List<GameObject>();
     [SerializeField] private Button LeftPageButton;
     [SerializeField] private Button RightPageButton;
 
@@ -87,10 +88,13 @@ public class QuestUIManager : MonoBehaviour
             {
                 QuestButtons[i].GetComponentInChildren<TMP_Text>().text = "";
                 QuestButtons[i].GetComponent<Button>().enabled = false;
+                QuestButtonChecks[i].SetActive(false);
                 continue;
             }
             QuestButtons[i].GetComponent<Button>().enabled = true;
             QuestButtons[i].GetComponentInChildren<TMP_Text>().text = quests[i].Title;
+            bool completed = FindQuestData(quests[i].QuestID) != null ? FindQuestData(quests[i].QuestID).IsCompleted : false;
+            QuestButtonChecks[i].SetActive(completed);
         }
     }
     private void SetQuestText(List<Quest> quests)

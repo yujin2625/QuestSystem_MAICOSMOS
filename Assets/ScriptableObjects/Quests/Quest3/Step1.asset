@@ -15,10 +15,11 @@ MonoBehaviour:
   m_quest: {fileID: 11400000, guid: b79f6605b4050a74683fd36d1231e281, type: 2}
   m_priority: 0
   m_isCompleted: 0
-  m_condition: 3
+  m_condition: 1
   m_positionStep:
     TriggerPrefab: {fileID: 0}
   m_numStep:
+    EConditionNum: 0
     ConditionNum: 0
   m_inputStep:
     PressedKey: 
