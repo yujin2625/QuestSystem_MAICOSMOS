@@ -17,8 +17,9 @@ MonoBehaviour:
   m_isCompleted: 0
   m_condition: 0
   m_positionStep:
-    TriggerPrefab: {fileID: 0}
+    TriggerPrefab: {fileID: 3445294047768090300, guid: facc0102a7f52924197a273f60784642, type: 3}
   m_numStep:
+    EConditionNum: 0
     ConditionNum: 0
   m_inputStep:
     PressedKey: 

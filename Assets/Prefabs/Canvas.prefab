@@ -255,18 +255,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4703867614218458500}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
         m_MethodName: OnClickQuest
@@ -278,6 +266,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4703867614218458500}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &4703867613097599666
 GameObject:
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
   m_sharedMaterial: {fileID: 1845394522626454053, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
@@ -921,11 +921,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4703867614446558442}
   - {fileID: 4703867613500841887}
   - {fileID: 4703867614611310089}
   - {fileID: 4703867614923388548}
   - {fileID: 4703867614083916343}
-  - {fileID: 4703867614446558442}
   m_Father: {fileID: 4703867614218458499}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1016,7 +1016,7 @@ MonoBehaviour:
   - {fileID: 1923040511}
   - {fileID: 508389639}
   - {fileID: 39353329}
-  ClickedOnAwakeButton: {fileID: 1025192159}
+  ClickedOnAwakeButton: {fileID: 39353329}
   NormalColor: {r: 1, g: 1, b: 1, a: 1}
   SelectedColor: {r: 1, g: 0.7122642, b: 0.7122642, a: 1}
 --- !u!1 &4703867613327740409
@@ -1357,8 +1357,8 @@ RectTransform:
   m_Father: {fileID: 4703867615148279665}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.79146683}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1465,7 +1465,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
   m_sharedMaterial: {fileID: 1845394522626454053, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
@@ -1571,7 +1571,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 2698.66}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4703867613439922183
 CanvasRenderer:
@@ -1819,7 +1819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
   m_sharedMaterial: {fileID: 1845394522626454053, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
@@ -1921,12 +1921,12 @@ RectTransform:
   m_Children:
   - {fileID: 4703867614828484392}
   m_Father: {fileID: 4703867613245600706}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867613500841884
 CanvasRenderer:
@@ -1983,7 +1983,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
-        m_MethodName: InitQuestUI
+        m_MethodName: OnClickQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2813,7 +2813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC804\uCCB4 \uD018\uC2A4\uD2B8"
+  m_text: "\uC9C4\uD589 \uAC00\uB2A5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
   m_sharedMaterial: {fileID: 1845394522626454053, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
@@ -2840,7 +2840,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.6
+  m_fontSize: 52.2
   m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2918,10 +2918,10 @@ RectTransform:
   m_Father: {fileID: 4703867614825048509}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.31, y: -281.38}
-  m_SizeDelta: {x: 828.62, y: 562.76}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867613916956194
 CanvasRenderer:
@@ -3165,12 +3165,12 @@ RectTransform:
   m_Children:
   - {fileID: 4703867613342306195}
   m_Father: {fileID: 4703867613245600706}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1050, y: -50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867614083916340
 CanvasRenderer:
@@ -3227,7 +3227,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
-        m_MethodName: InitQuestUI
+        m_MethodName: OnClickQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3373,7 +3373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
   m_sharedMaterial: {fileID: 1845394522626454053, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
@@ -3459,7 +3459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4703867614218458499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3552,10 +3552,10 @@ RectTransform:
   m_Father: {fileID: 4703867614825048509}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 414.31, y: -681.38}
-  m_SizeDelta: {x: 828.62, y: 237.23999}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867614346278583
 CanvasRenderer:
@@ -3585,7 +3585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
   m_sharedMaterial: {fileID: 1845394522626454053, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
@@ -3883,7 +3883,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
   m_sharedMaterial: {fileID: 1845394522626454053, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
@@ -3985,12 +3985,12 @@ RectTransform:
   m_Children:
   - {fileID: 4703867613880513642}
   m_Father: {fileID: 4703867613245600706}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1350, y: -50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867614446558439
 CanvasRenderer:
@@ -4047,7 +4047,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
-        m_MethodName: InitQuestUI
+        m_MethodName: OnClickQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4248,8 +4248,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4703867613349987220}
   m_HandleRect: {fileID: 4703867613349987221}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.20853314
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4287,12 +4287,12 @@ RectTransform:
   m_Children:
   - {fileID: 4703867614790239679}
   m_Father: {fileID: 4703867613245600706}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867614611310086
 CanvasRenderer:
@@ -4349,7 +4349,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
-        m_MethodName: InitQuestUI
+        m_MethodName: OnClickQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4730,10 +4730,10 @@ RectTransform:
   m_Father: {fileID: 4703867613439922184}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 405.81, y: -1349.33}
-  m_SizeDelta: {x: 811.62, y: 2698.66}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867614806077075
 CanvasRenderer:
@@ -4763,18 +4763,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifssjdflksjdklfjslkjd;lkjflsjdlkfjsljdflsjldkfjslkjfldjflskjdlfjslkdjlfsjdlkjflsjdklfjsldjflsjfjsljdjajdslkjf
-    i elkfjsliejflsjkdjfie                 fsoiejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjlifjslidjfsjlejifs
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
   m_sharedMaterial: {fileID: 1845394522626454053, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
@@ -4837,7 +4826,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 10, y: 10, z: 10, w: 0}
+  m_margin: {x: 50, y: 50, z: 50, w: 50}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4855,6 +4844,7 @@ GameObject:
   - component: {fileID: 4703867614825048507}
   - component: {fileID: 4703867614825048508}
   - component: {fileID: 4703867614825048506}
+  - component: {fileID: 2591855283750154504}
   m_Layer: 5
   m_Name: Right Panel
   m_TagString: Untagged
@@ -4878,10 +4868,10 @@ RectTransform:
   m_Father: {fileID: 4703867613138653673}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1085.69, y: -400}
-  m_SizeDelta: {x: 828.62, y: 800}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867614825048507
 CanvasRenderer:
@@ -4947,6 +4937,26 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2591855283750154504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703867614825048510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 200
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &4703867614828484393
 GameObject:
   m_ObjectHideFlags: 0
@@ -5114,12 +5124,12 @@ RectTransform:
   m_Children:
   - {fileID: 4703867614726817363}
   m_Father: {fileID: 4703867613245600706}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 750, y: -50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867614923388545
 CanvasRenderer:
@@ -5176,7 +5186,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuestUIManager, Assembly-CSharp
-        m_MethodName: InitQuestUI
+        m_MethodName: OnClickQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5292,9 +5302,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4703867614944543354
 CanvasRenderer:
@@ -5412,7 +5422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
   m_sharedMaterial: {fileID: 1845394522626454053, guid: 1ba5b0e35f9121f4e95f1aa630dee4c3, type: 2}
@@ -5515,10 +5525,10 @@ RectTransform:
   m_Father: {fileID: 4703867613138653673}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 335.69, y: -400}
-  m_SizeDelta: {x: 671.38, y: 800}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703867615033450310
 CanvasRenderer:

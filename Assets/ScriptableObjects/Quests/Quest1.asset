@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b8fdb6c97586741902099ca85c381a, type: 3}
   m_Name: Quest1
   m_EditorClassIdentifier: 
-  m_questType: 0
-  m_title: title
-  m_context: context
+  m_questType: 1
+  m_title: "\uD29C\uD1A0\uB9AC\uC5BC_\uC774\uB3D9"
+  m_context: "Step1. \uD30C\uB780\uC0C9 \uD050\uBE0C\uB85C \uC774\uB3D9\uD558\uC138\uC694.\n\nStep2.
+    \uC810\uD504\uB97C \uD65C\uC6A9\uD558\uC5EC \uBE68\uAC04\uC0C9 \uD050\uBE0C\uB85C
+    \uC774\uB3D9\uD558\uC138\uC694.\n\nStep3. \uB9C8\uC6B0\uC2A4 \uC774\uB3D9\uC744
+    \uD1B5\uD574 \uD654\uBA74\uC744 \uC804\uD658\uD558\uC5EC \uAC80\uC815\uC0C9 \uD050\uBE0C\uB85C
+    \uC774\uB3D9\uD558\uC138\uC694."
   m_Steps:
   - {fileID: 11400000, guid: 496569f3500d63241a93b3acdd0320c5, type: 2}
   - {fileID: 11400000, guid: 83f9a71a7b79a394fbf502a65b2e59da, type: 2}
+  - {fileID: 11400000, guid: af17da344c85ac047991d6f068a9da1a, type: 2}
   m_currentStep: 0

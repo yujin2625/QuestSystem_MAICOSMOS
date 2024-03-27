@@ -89,9 +89,12 @@ public class Quest
         {
             Debug.Log(QuestID + " QuestIsFinished");
             //DB에 해당 퀘스트 완료 표시
+            DataSender.Instance.StartSendQuestData(QuestID, "0", "1");
             return false;
         }
         // DB에 해당 스텝 완료 표시
+        Debug.Log("CurrentStep to string"+CurrentStep.ToString());
+        DataSender.Instance.StartSendQuestData(QuestID, CurrentStep.ToString(), "0");
         StepManager.instance.StartStep(Steps[CurrentStep]);
         return true;
     }

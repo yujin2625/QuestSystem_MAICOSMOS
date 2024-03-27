@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b8fdb6c97586741902099ca85c381a, type: 3}
   m_Name: Quest3
   m_EditorClassIdentifier: 
-  m_questType: 0
-  m_title: quest3
-  m_context: quest3quest3quest3quest3
+  m_questType: 2
+  m_title: "\uCD9C\uC11D \uD018\uC2A4\uD2B8"
+  m_context: "\uD558\uB8E8\uC5D0 \uD55C\uBC88 \uCD9C\uC11D\uD558\uAE30."
   m_Steps:
   - {fileID: 11400000, guid: a0dd16b63a8cf664b8782715913dd319, type: 2}
   m_currentStep: 0

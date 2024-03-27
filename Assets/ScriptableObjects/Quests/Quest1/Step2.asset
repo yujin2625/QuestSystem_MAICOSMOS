@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2cecc898fa8034283ac2fcd2c25b88, type: 3}
   m_Name: Step2
   m_EditorClassIdentifier: 
-  m_quest: {fileID: 0}
+  m_quest: {fileID: 11400000, guid: 5315a345045ae024cb35176131a595c2, type: 2}
   m_priority: 0
   m_isCompleted: 0
   m_condition: 0
   m_positionStep:
     TriggerPrefab: {fileID: 8551257318718320338, guid: fd408f5b376d2874fa7b3ab979639c20, type: 3}
   m_numStep:
+    EConditionNum: 0
     ConditionNum: 0
   m_inputStep:
     PressedKey: 

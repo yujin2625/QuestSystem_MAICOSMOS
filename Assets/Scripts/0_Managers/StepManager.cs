@@ -5,6 +5,8 @@ using UnityEngine;
 public class StepManager : MonoBehaviour
 {
     public static StepManager instance;
+
+    [SerializeField] private GameObject NumCheckerPrefab;
     private void Awake()
     {
         if (instance != null)
@@ -20,10 +22,12 @@ public class StepManager : MonoBehaviour
         switch (step.Condition)
         {
             case ECondition.Position:
-                GameObject obj = Instantiate(step.PositionStep.m_triggerPrefab);
-                obj.GetComponent<PositionStepChecker>().m_quest = FindQuest(step);
+                GameObject pos_obj = Instantiate(step.PositionStep.m_triggerPrefab);
+                pos_obj.GetComponent<PositionStepChecker>().m_quest = FindQuest(step);
                 break;
             case ECondition.Num:
+                GameObject num_obj = Instantiate(NumCheckerPrefab);
+                num_obj.GetComponent<UserNumChecker>().StartCheckUserNum(FindQuest(step),step.NumStep.m_eConditionNum,step.NumStep.m_conditionNum);
                 break;
             case ECondition.Input:
                 break;

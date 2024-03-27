@@ -29,7 +29,7 @@ public class QuestScriptableObject : ScriptableObject
     [SerializeField] private string m_title;
     public string Title { get => m_title; }
 
-    [SerializeField] private string m_context;
+    [SerializeField,TextArea] private string m_context;
     public string Context { get => m_context; }
 
     [SerializeField] private List<StepScriptableObject> m_Steps = new List<StepScriptableObject>();

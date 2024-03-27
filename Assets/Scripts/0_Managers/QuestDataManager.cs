@@ -25,6 +25,8 @@ public class QuestDataManager : MonoBehaviour
         instance = this;
 
         DataLoader = GetComponentInChildren<DataLoader>();
+
+        StartGetData();
     }
 
     private void Start()
@@ -87,7 +89,7 @@ public class QuestData
     {
         Debug.Log("id : " + id);
         Debug.Log("mb_id : " + mb_id);
-        Debug.Log("quest_id" + quest_id);
+        Debug.Log("quest_id : " + quest_id);
         Debug.Log("cond_num : " + cond_num);
         Debug.Log("completed : " + IsCompleted);
     }

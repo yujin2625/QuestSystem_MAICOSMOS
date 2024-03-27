@@ -53,6 +53,9 @@ public class PositionStep
 [Serializable]
 public class NumStep
 {
+    [SerializeField] private EConditionNumType EConditionNum;
+    public EConditionNumType m_eConditionNum { get => EConditionNum; set => EConditionNum = value; }
+
     [SerializeField] private int ConditionNum;
     public int m_conditionNum { get => ConditionNum; set => ConditionNum = value; }
 }
@@ -67,4 +70,11 @@ public class UIStep
 {
     [SerializeField] private string PressedUI;
     public string m_pressedUI { get => PressedUI; set => PressedUI = value; }
+}
+
+public enum EConditionNumType
+{
+    mb_level,
+    mb_point,
+    last
 }

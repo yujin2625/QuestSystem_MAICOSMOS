@@ -20,30 +20,36 @@ public class QuestUIManager : MonoBehaviour
     private QuestDataSet m_questDataSet;
 
     private List<Quest> m_QuestList = new List<Quest>();
+    private List<Quest> m_StartableQuests = new List<Quest>();
     private List<Quest> m_StartedQuests = new List<Quest>();
     private List<Quest> m_CompletedQuests = new List<Quest>();
     private List<Quest> m_DailyQuests = new List<Quest>();
     private List<Quest> m_WeeklyQuests = new List<Quest>();
-
-    private Quest m_SelectedQuest;
-
+    public void Awake()
+    {
+        m_questDataSet = QuestDataManager.instance.QuestDataSet;
+    }
     public void OnClickQuest()
     {
+        //QuestDataManager.instance.StartGetData();
+        m_StartableQuests.Clear();
         m_StartedQuests.Clear();
         m_CompletedQuests.Clear();
         m_DailyQuests.Clear();
         m_WeeklyQuests.Clear();
         StartCoroutine(SetQuestUI());
     }
+    //public void OnClickQuestTab()
+    //{
+    //    StartCoroutine(SetQuestUI());
+    //}
     private IEnumerator SetQuestUI()
     {
         m_QuestList = QuestManager.instance.GetQuests();
-        QuestDataManager.instance.StartGetData();
         yield return new WaitUntil(() => QuestDataManager.instance.QuestDataSet != null);
         m_questDataSet = QuestDataManager.instance.QuestDataSet;
-        Debug.Log("0000000000000000000");
+        yield return new WaitForEndOfFrame();
         SortQuests();
-        Debug.Log("1111111111111111111");
         InitQuestUI();
     }
 
@@ -64,7 +70,7 @@ public class QuestUIManager : MonoBehaviour
                 SetQuestButtonText(m_WeeklyQuests);
                 break;
             case 4:
-                SetQuestButtonText(m_QuestList);
+                SetQuestButtonText(m_StartableQuests);
                 break;
         }
     }
@@ -89,7 +95,6 @@ public class QuestUIManager : MonoBehaviour
     }
     private void SetQuestText(List<Quest> quests)
     {
-        // ================ 나중에 간단하게 바꿀것======================================
         if (quests.Count == 0)
         {
             QuestText.text = "";
@@ -105,18 +110,12 @@ public class QuestUIManager : MonoBehaviour
             return;
         }
         QuestText.text = quest.Context;
-        QuestRewardText.text = "Reward not set yet";
+        QuestRewardText.text = ((quest.CurrentStep > 0) ? "진행도 : "+ quest.CurrentStep.ToString() : "");
     }
     private void SortQuests()
     {
         foreach (Quest data in m_QuestList)
         {
-            if (FindQuestData(data.QuestID).IsCompleted)
-            {
-                m_CompletedQuests.Add(data);
-                continue;
-            }
-
             // check if repeated quest
             switch (data.EQuestType)
             {
@@ -128,14 +127,26 @@ public class QuestUIManager : MonoBehaviour
                     continue;
             }
 
+            // check if has UserQuestData
+            if (FindQuestData(data.QuestID) == null)
+            {
+                m_StartableQuests.Add(data);
+                continue;
+            }
+            // check if completed quest
+            if (FindQuestData(data.QuestID).IsCompleted)
+            {
+                m_CompletedQuests.Add(data);
+                continue;
+            }
+
+            // check if step > 0
             if (FindQuestData(data.QuestID).IsStarted)
             {
                 m_StartedQuests.Add(data);
                 continue;
             }
-
         }
-
     }
     private Quest FindQuest(string id)
     {
