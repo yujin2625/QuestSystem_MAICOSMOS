@@ -50,6 +50,7 @@ public class UserNumChecker : MonoBehaviour
         if (EConditionNumType == EConditionNumType.mb_present || EConditionNumType == EConditionNumType.mb_present_week)
         {
             DataSender.Instance.StartAddQuestNumData(EConditionNumType, 1);
+            CurrentUserNum++;
         }
     }
 }
