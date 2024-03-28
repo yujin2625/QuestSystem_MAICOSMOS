@@ -40,33 +40,38 @@ public class QuestDataManager : MonoBehaviour
     }
     private IEnumerator GetData(string url)
     {
-        DataLoader.StartWebRequest(url);
-        string str;
-        do
+        /*
+        yield return DataLoader.SendWebRequest(url, (string result) =>
         {
-            yield return null;
-            str = DataLoader.ReturnedData;
-        } while (str == null);
-        m_QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(str);
+            m_QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(result);
+        });*/
+
+        yield return DataLoader.SendWebRequest(url, ongetresult);
+
     }
 
+    private void ongetresult(string result)
+    {
+        if(result != null)
+            m_QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(result);
+    }
 
 }
 
 [Serializable]
 public class QuestDataSet
 {
-    [SerializeField] public List<QuestData> QuestDatas;
+    public List<QuestData> QuestDatas;
 }
 
 [Serializable]
 public class QuestData
 {
-    [SerializeField] public int id;
-    [SerializeField] public string mb_id;
-    [SerializeField] public string quest_id;
-    [SerializeField] public int cond_num;
-    [SerializeField] public int completed;
+    public int id;
+    public string mb_id;
+    public string quest_id;
+    public int cond_num;
+    public int completed;
 
     public bool IsCompleted { get { return completed != 0; } }
     public bool IsStarted { get { return cond_num != 0; } }

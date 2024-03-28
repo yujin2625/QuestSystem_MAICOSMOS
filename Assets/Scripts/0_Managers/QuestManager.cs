@@ -2,6 +2,8 @@ using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
@@ -25,13 +27,18 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private QuestDataSet QuestDataSet = new QuestDataSet();
     [SerializeField] private List<Quest> Quests = new List<Quest>();
 
-    private void Start()
+    private IEnumerator Start()
     {
-        StartGetData();
-        SetQuestData();
+        yield return GetData(LoadDataURL);
+        if (QuestDataSet != null)
+            SetQuestData();
+        else
+            Debug.LogError(" Failed retrive data set");
     }
+
     public void SetQuestData()
     {
+        Debug.Log("SetQuestData Start");
         foreach (QuestScriptableObject so in QuestSOs)
         {
             QuestData questData = FindQuestData(so.QuestID);
@@ -40,22 +47,16 @@ public class QuestManager : MonoBehaviour
             else
                 Quests.Add(new Quest(so.QuestID, so.EQuestType, so.Title, so.Context, so.Steps, questData.cond_num, questData.IsCompleted));
         }
+        Debug.Log("SetQuestData End");
     }
-    public void StartGetData()
-    {
-        StartCoroutine(GetData(LoadDataURL));
-    }
+
     private IEnumerator GetData(string url)
     {
-        DataLoader.StartWebRequest(url);
-        string str;
-        do
-        {
-            yield return null;
-            str = DataLoader.ReturnedData;
-        } while (str == null);
-        QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(str);
+        yield return DataLoader.SendWebRequest(url);
+        if (DataLoader.ReturnedData != null)
+            QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(DataLoader.ReturnedData);
     }
+
     private QuestScriptableObject FindQuestSO(string id)
     {
         foreach (QuestScriptableObject data in QuestSOs)
