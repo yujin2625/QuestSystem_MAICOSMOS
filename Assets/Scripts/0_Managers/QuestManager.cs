@@ -1,7 +1,7 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Linq;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
@@ -11,114 +11,67 @@ public class QuestManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Destroy(gameObject);
+            Destroy(instance);
             return;
         }
         instance = this;
     }
 
-    [SerializeField] private List<QuestScriptableObject> m_scriptableQuests;
+    private string LoadDataURL = "https://maicosmos.com/yujin/yujin.php";
+
+    [SerializeField] private DataLoader DataLoader;
+
+    [SerializeField] private List<QuestScriptableObject> QuestSOs = new List<QuestScriptableObject>();
+    [SerializeField] private QuestDataSet QuestDataSet = new QuestDataSet();
     [SerializeField] private List<Quest> Quests = new List<Quest>();
 
     private void Start()
     {
-        InitQuests();
-        StartAllQuests();
+        StartGetData();
+        SetQuestData();
     }
-
-    private void InitQuests()
+    public void SetQuestData()
     {
-        foreach (QuestScriptableObject quest in m_scriptableQuests)
+        foreach (QuestScriptableObject so in QuestSOs)
         {
-            QuestData questData = QuestDataContainer.Instance.FindQuestData(quest.QuestID);
-            Quests.Add(new Quest(quest.QuestID, quest.EQuestType, quest.Title, quest.Context, quest.Steps, questData == null ? 0 : questData.cond_num + 1));
+            QuestData questData = FindQuestData(so.QuestID);
+            if (questData == null)
+                Quests.Add(new Quest(so.QuestID, so.EQuestType, so.Title, so.Context, so.Steps, 0, false));
+            else
+                Quests.Add(new Quest(so.QuestID, so.EQuestType, so.Title, so.Context, so.Steps, questData.cond_num, questData.IsCompleted));
         }
     }
-    private void StartAllQuests()
+    public void StartGetData()
     {
-        foreach (Quest quest in Quests)
-        {
-            //QuestData questData = QuestDataContainer.Instance.FindQuestData(quest.QuestID);
-            //if (questData==null)
-            //    StepManager.instance.StartStep(quest.Steps[quest.CurrentStep - 1]);
-            
-            quest.NextStep();
-        }
+        StartCoroutine(GetData(LoadDataURL));
     }
-
-    public void NextStep(Quest quest)
+    private IEnumerator GetData(string url)
     {
-        quest.NextStep();
-    }
-    public void NextStep(QuestScriptableObject questSO)
-    {
-        foreach (Quest quest in Quests)
+        DataLoader.StartWebRequest(url);
+        string str;
+        do
         {
-            if (quest.QuestID == questSO.QuestID)
-            {
-                quest.NextStep();
-            }
-        }
+            yield return null;
+            str = DataLoader.ReturnedData;
+        } while (str == null);
+        QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(str);
     }
-    public void NextStep(string questID)
+    private QuestScriptableObject FindQuestSO(string id)
     {
-        foreach (Quest quest in Quests)
+        foreach (QuestScriptableObject data in QuestSOs)
         {
-            if (quest.QuestID == questID)
-                quest.NextStep();
+            if (data.QuestID == id)
+                return data;
         }
+        Debug.LogError("QuestList does not contain " + id);
+        return null;
     }
-
-    public List<Quest> GetQuests()
+    private QuestData FindQuestData(string id)
     {
-        return Quests;
-    }
-}
-
-[Serializable]
-public class Quest
-{
-    public string QuestID { get; set; }
-    public EQuestType EQuestType { get; set; }
-
-    public string Title { get; set; }
-    public string Context { get; set; }
-
-    public List<Step> Steps = new List<Step>();
-
-    public int CurrentStep { get; set; }
-    public bool NextStep()
-    {
-        if (CurrentStep >= Steps.Count)
+        foreach (QuestData data in QuestDataSet.QuestDatas)
         {
-            return false;
+            if (data.quest_id == id) return data;
         }
-        CurrentStep++;
-        if (CurrentStep >= Steps.Count)
-        {
-            Debug.Log(Title + " QuestIsFinished");
-            //DB에 해당 퀘스트 완료 표시
-            DataSender.Instance.StartSendQuestData(QuestID, CurrentStep.ToString() , "1");
-            return false;
-        }
-        // DB에 해당 스텝 완료 표시
-        Debug.Log("CurrentStep to string"+CurrentStep.ToString());
-        DataSender.Instance.StartSendQuestData(QuestID, CurrentStep.ToString(), "0");
-        StepManager.instance.StartStep(Steps[CurrentStep]);
-        return true;
-    }
-
-    public Quest(string questID, EQuestType eQuestType, string title, string context, List<StepScriptableObject> steps, int currentStep)
-    {
-        QuestID = questID;
-        EQuestType = eQuestType;
-        Title = title;
-        Context = context;
-        //Steps.Clear();
-        foreach (StepScriptableObject step in steps)
-        {
-            Steps.Add(new Step(questID, step.Priority, step.IsCompleted, step.Condition, step.PositionStep, step.NumStep, step.InputStep, step.UIStep));
-        }
-        CurrentStep = currentStep;
+        return null;
     }
 }

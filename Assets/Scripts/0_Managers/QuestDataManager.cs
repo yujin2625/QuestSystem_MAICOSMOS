@@ -48,10 +48,6 @@ public class QuestDataManager : MonoBehaviour
             str = DataLoader.ReturnedData;
         } while (str == null);
         m_QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(str);
-        //foreach (var data in m_QuestDataSet.QuestDatas)
-        //{
-        //    data.Print();
-        //}
     }
 
 

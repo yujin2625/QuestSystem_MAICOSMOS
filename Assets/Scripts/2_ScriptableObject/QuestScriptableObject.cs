@@ -35,7 +35,5 @@ public class QuestScriptableObject : ScriptableObject
     [SerializeField] private List<StepScriptableObject> m_Steps = new List<StepScriptableObject>();
     public List<StepScriptableObject> Steps { get => m_Steps; }
 
-    [SerializeField] private int m_currentStep;
-    public int CurrentStep { get => m_currentStep; }
 
 }

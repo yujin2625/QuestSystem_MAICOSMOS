@@ -30,7 +30,7 @@ public class QuestUIManager : MonoBehaviour
     private List<Quest> m_WeeklyQuests = new List<Quest>();
     public void Awake()
     {
-        m_QuestList = QuestManager.instance.GetQuests();
+        //m_QuestList = QuestManager.instance.GetQuests();
         m_questDataSet = QuestDataManager.instance.QuestDataSet;
     }
 
