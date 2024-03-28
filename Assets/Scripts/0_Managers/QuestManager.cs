@@ -27,13 +27,21 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private QuestDataSet QuestDataSet = new QuestDataSet();
     [SerializeField] private List<Quest> Quests = new List<Quest>();
 
+    List<GameObject> currentQuestList = new List<GameObject>(); 
+
     private IEnumerator Start()
     {
-        yield return GetData(LoadDataURL);
+        yield return GetQuestData(LoadDataURL);
         if (QuestDataSet != null)
             SetQuestData();
         else
             Debug.LogError(" Failed retrive data set");
+
+        var prefab = Resources.Load("base_move_torial") as GameObject;
+        if(prefab != null)
+        {
+            currentQuestList.Add( Instantiate(prefab));
+        }       
     }
 
     public void SetQuestData()
@@ -48,12 +56,14 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    private IEnumerator GetData(string url)
+    private IEnumerator GetQuestData(string url)
     {
         yield return DataLoader.SendWebRequest(url, (string result) =>
         {
             QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(result);
         });
+
+        // quest_id = "base_move_torial";
     }
 
     private QuestObject FindQuestSO(string id)

@@ -35,7 +35,20 @@ public class QuestObject : MonoBehaviour
     [SerializeField] private List<StepBase> m_Steps = new List<StepBase>();
     public List<StepBase> Steps { get => m_Steps; }
 
+    private int curentStepIndex = 0;
 
+    private void Start()
+    {
+        Debug.Log(transform.childCount);
+
+    }
+
+    public void nextStep()
+    {
+        // curentStepIndex
+        curentStepIndex++;
+        transform.GetChild(curentStepIndex);
+    }
 
 
 }

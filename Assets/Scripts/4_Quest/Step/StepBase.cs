@@ -35,10 +35,15 @@ public class StepBase : MonoBehaviour
     [SerializeField] private ECondition m_condition;
     public ECondition Condition { get => m_condition; set => m_condition = value; }
 
-    
+    private void Start()
+    {
+        GetComponentInParent<QuestObject>().nextStep();
+    }
+
+
     //============ Step Conditions ==============================================
 
-    
+
 
     //[SerializeField] private PositionStep m_positionStep;
     //public PositionStep PositionStep { get => m_positionStep; }
