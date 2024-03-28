@@ -1,7 +1,9 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
@@ -11,114 +13,80 @@ public class QuestManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Destroy(gameObject);
+            Destroy(instance);
             return;
         }
         instance = this;
     }
 
-    [SerializeField] private List<QuestScriptableObject> m_scriptableQuests;
+    private string LoadDataURL = "https://maicosmos.com/yujin/yujin.php";
+
+    [SerializeField] private DataLoader DataLoader;
+
+    [SerializeField] private List<QuestObject> QuestSOs = new List<QuestObject>();
+    [SerializeField] private QuestDataSet QuestDataSet = new QuestDataSet();
     [SerializeField] private List<Quest> Quests = new List<Quest>();
 
-    private void Start()
+    List<GameObject> currentQuestList = new List<GameObject>(); 
+
+    private IEnumerator Start()
     {
-        InitQuests();
-        StartAllQuests();
+        yield return GetQuestData(LoadDataURL);
+        if (QuestDataSet != null)
+            SetQuestData();
+        else
+            Debug.LogError(" Failed retrive data set");
+
+        var prefab = Resources.Load("base_move_torial") as GameObject;
+        if(prefab != null)
+        {
+            currentQuestList.Add( Instantiate(prefab));
+        }       
     }
 
-    private void InitQuests()
+    public void SetQuestData()
     {
-        foreach (QuestScriptableObject quest in m_scriptableQuests)
+        foreach (QuestObject so in QuestSOs)
         {
-            QuestData questData = QuestDataContainer.Instance.FindQuestData(quest.QuestID);
-            Quests.Add(new Quest(quest.QuestID, quest.EQuestType, quest.Title, quest.Context, quest.Steps, questData == null ? 0 : questData.cond_num + 1));
-        }
-    }
-    private void StartAllQuests()
-    {
-        foreach (Quest quest in Quests)
-        {
-            //QuestData questData = QuestDataContainer.Instance.FindQuestData(quest.QuestID);
-            //if (questData==null)
-            //    StepManager.instance.StartStep(quest.Steps[quest.CurrentStep - 1]);
-            
-            quest.NextStep();
-        }
-    }
-
-    public void NextStep(Quest quest)
-    {
-        quest.NextStep();
-    }
-    public void NextStep(QuestScriptableObject questSO)
-    {
-        foreach (Quest quest in Quests)
-        {
-            if (quest.QuestID == questSO.QuestID)
-            {
-                quest.NextStep();
-            }
-        }
-    }
-    public void NextStep(string questID)
-    {
-        foreach (Quest quest in Quests)
-        {
-            if (quest.QuestID == questID)
-                quest.NextStep();
+            QuestData questData = FindQuestData(so.QuestID);
+            if (questData == null)
+                Quests.Add(new Quest(so.QuestID, so.EQuestType, so.Title, so.Context, so.Steps, 0, false));
+            else
+                Quests.Add(new Quest(so.QuestID, so.EQuestType, so.Title, so.Context, so.Steps, questData.cond_num, questData.IsCompleted));
         }
     }
 
-    public List<Quest> GetQuests()
+    private IEnumerator GetQuestData(string url)
     {
-        return Quests;
-    }
-}
-
-[Serializable]
-public class Quest
-{
-    public string QuestID { get; set; }
-    public EQuestType EQuestType { get; set; }
-
-    public string Title { get; set; }
-    public string Context { get; set; }
-
-    public List<Step> Steps = new List<Step>();
-
-    public int CurrentStep { get; set; }
-    public bool NextStep()
-    {
-        if (CurrentStep >= Steps.Count)
+        yield return DataLoader.SendWebRequest(url, (string result) =>
         {
-            return false;
-        }
-        CurrentStep++;
-        if (CurrentStep >= Steps.Count)
-        {
-            Debug.Log(Title + " QuestIsFinished");
-            //DB에 해당 퀘스트 완료 표시
-            DataSender.Instance.StartSendQuestData(QuestID, CurrentStep.ToString() , "1");
-            return false;
-        }
-        // DB에 해당 스텝 완료 표시
-        Debug.Log("CurrentStep to string"+CurrentStep.ToString());
-        DataSender.Instance.StartSendQuestData(QuestID, CurrentStep.ToString(), "0");
-        StepManager.instance.StartStep(Steps[CurrentStep]);
-        return true;
+            QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(result);
+        });
+
+        // quest_id = "base_move_torial";
     }
 
-    public Quest(string questID, EQuestType eQuestType, string title, string context, List<StepScriptableObject> steps, int currentStep)
+    private QuestObject FindQuestSO(string id)
     {
-        QuestID = questID;
-        EQuestType = eQuestType;
-        Title = title;
-        Context = context;
-        //Steps.Clear();
-        foreach (StepScriptableObject step in steps)
+        foreach (QuestObject data in QuestSOs)
         {
-            Steps.Add(new Step(questID, step.Priority, step.IsCompleted, step.Condition, step.PositionStep, step.NumStep, step.InputStep, step.UIStep));
+            if (data.QuestID == id)
+                return data;
         }
-        CurrentStep = currentStep;
+        Debug.LogError("QuestList does not contain " + id);
+        return null;
+    }
+    private QuestData FindQuestData(string id)
+    {
+        foreach (QuestData data in QuestDataSet.QuestDatas)
+        {
+            if (data.quest_id == id) return data;
+        }
+        return null;
+    }
+
+    internal void NextStep(Quest m_quest)
+    {
+        throw new NotImplementedException();
     }
 }

@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PositionStepChecker : MonoBehaviour
+public class PositionStep :StepBase
 {
-    public Quest m_quest;
+    [SerializeField] private GameObject TriggerPrefab;
+    public GameObject m_triggerPrefab { get => TriggerPrefab; set => TriggerPrefab = value; }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("OnTriggerEnter : " + other.name);
-            QuestManager.instance.NextStep(m_quest);
+            //QuestManager.instance.NextStep();
             Destroy(gameObject);
         }
     }
+
 }
