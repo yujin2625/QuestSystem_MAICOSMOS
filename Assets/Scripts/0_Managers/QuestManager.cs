@@ -37,7 +37,8 @@ public class QuestManager : MonoBehaviour
     {
         foreach (Quest quest in Quests)
         {
-            StepManager.instance.StartStep(quest.Steps[quest.CurrentStep]);
+            if (quest.CurrentStep < quest.Steps.Count)
+                StepManager.instance.StartStep(quest.Steps[quest.CurrentStep]);
         }
     }
 

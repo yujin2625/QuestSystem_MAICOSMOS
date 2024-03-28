@@ -40,9 +40,9 @@ public class UserNumChecker : MonoBehaviour
         EConditionNumType = _eConditionNumType;
         ConditionUserNum = _conditionUserNum;
 
+        StartCoroutine(CheckUserNum(EConditionNumType));
         PresentChecker();
         
-        StartCoroutine(CheckUserNum(EConditionNumType));
     }
 
     private void PresentChecker()        // 출석 관련 스텝 처리
@@ -52,5 +52,6 @@ public class UserNumChecker : MonoBehaviour
             DataSender.Instance.StartAddQuestNumData(EConditionNumType, 1);
             CurrentUserNum++;
         }
+        StartCoroutine(CheckUserNum(EConditionNumType));
     }
 }
