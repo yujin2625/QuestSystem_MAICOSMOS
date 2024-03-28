@@ -40,21 +40,21 @@ public class QuestDataManager : MonoBehaviour
     }
     private IEnumerator GetData(string url)
     {
-        /*
+        
         yield return DataLoader.SendWebRequest(url, (string result) =>
         {
             m_QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(result);
-        });*/
+        });
 
-        yield return DataLoader.SendWebRequest(url, ongetresult);
+        //yield return DataLoader.SendWebRequest(url, ongetresult);
 
     }
 
-    private void ongetresult(string result)
-    {
-        if(result != null)
-            m_QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(result);
-    }
+    //private void ongetresult(string result)
+    //{
+    //    if(result != null)
+    //        m_QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(result);
+    //}
 
 }
 

@@ -52,9 +52,10 @@ public class QuestManager : MonoBehaviour
 
     private IEnumerator GetData(string url)
     {
-        yield return DataLoader.SendWebRequest(url);
-        if (DataLoader.ReturnedData != null)
-            QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(DataLoader.ReturnedData);
+        yield return DataLoader.SendWebRequest(url, (string result) =>
+        {
+            QuestDataSet = JsonConvert.DeserializeObject<QuestDataSet>(result);
+        });
     }
 
     private QuestScriptableObject FindQuestSO(string id)
