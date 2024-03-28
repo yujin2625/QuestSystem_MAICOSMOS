@@ -13,7 +13,7 @@ public class QuestDataManager : MonoBehaviour
     [SerializeField] private string URL;
 
     [SerializeField] private QuestDataSet m_QuestDataSet = new QuestDataSet();
-    public QuestDataSet QuestDataSet { get { StartGetData(); return m_QuestDataSet; } }
+    public QuestDataSet QuestDataSet { get { return m_QuestDataSet; } }
 
     private void Awake()
     {

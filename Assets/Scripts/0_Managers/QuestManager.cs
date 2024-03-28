@@ -30,15 +30,19 @@ public class QuestManager : MonoBehaviour
     {
         foreach (QuestScriptableObject quest in m_scriptableQuests)
         {
-            Quests.Add(new Quest(quest.QuestID, quest.EQuestType, quest.Title, quest.Context, quest.Steps, quest.CurrentStep));
+            QuestData questData = QuestDataContainer.Instance.FindQuestData(quest.QuestID);
+            Quests.Add(new Quest(quest.QuestID, quest.EQuestType, quest.Title, quest.Context, quest.Steps, questData == null ? 0 : questData.cond_num + 1));
         }
     }
     private void StartAllQuests()
     {
         foreach (Quest quest in Quests)
         {
-            if (quest.CurrentStep < quest.Steps.Count)
-                StepManager.instance.StartStep(quest.Steps[quest.CurrentStep]);
+            //QuestData questData = QuestDataContainer.Instance.FindQuestData(quest.QuestID);
+            //if (questData==null)
+            //    StepManager.instance.StartStep(quest.Steps[quest.CurrentStep - 1]);
+            
+            quest.NextStep();
         }
     }
 
@@ -85,12 +89,16 @@ public class Quest
     public int CurrentStep { get; set; }
     public bool NextStep()
     {
+        if (CurrentStep >= Steps.Count)
+        {
+            return false;
+        }
         CurrentStep++;
         if (CurrentStep >= Steps.Count)
         {
-            Debug.Log(QuestID + " QuestIsFinished");
+            Debug.Log(Title + " QuestIsFinished");
             //DB에 해당 퀘스트 완료 표시
-            DataSender.Instance.StartSendQuestData(QuestID, "0", "1");
+            DataSender.Instance.StartSendQuestData(QuestID, CurrentStep.ToString() , "1");
             return false;
         }
         // DB에 해당 스텝 완료 표시
