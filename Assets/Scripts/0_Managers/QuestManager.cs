@@ -23,7 +23,7 @@ public class QuestManager : MonoBehaviour
 
     [SerializeField] private DataLoader DataLoader;
 
-    [SerializeField] private List<QuestScriptableObject> QuestSOs = new List<QuestScriptableObject>();
+    [SerializeField] private List<QuestObject> QuestSOs = new List<QuestObject>();
     [SerializeField] private QuestDataSet QuestDataSet = new QuestDataSet();
     [SerializeField] private List<Quest> Quests = new List<Quest>();
 
@@ -38,8 +38,7 @@ public class QuestManager : MonoBehaviour
 
     public void SetQuestData()
     {
-        Debug.Log("SetQuestData Start");
-        foreach (QuestScriptableObject so in QuestSOs)
+        foreach (QuestObject so in QuestSOs)
         {
             QuestData questData = FindQuestData(so.QuestID);
             if (questData == null)
@@ -47,7 +46,6 @@ public class QuestManager : MonoBehaviour
             else
                 Quests.Add(new Quest(so.QuestID, so.EQuestType, so.Title, so.Context, so.Steps, questData.cond_num, questData.IsCompleted));
         }
-        Debug.Log("SetQuestData End");
     }
 
     private IEnumerator GetData(string url)
@@ -58,9 +56,9 @@ public class QuestManager : MonoBehaviour
         });
     }
 
-    private QuestScriptableObject FindQuestSO(string id)
+    private QuestObject FindQuestSO(string id)
     {
-        foreach (QuestScriptableObject data in QuestSOs)
+        foreach (QuestObject data in QuestSOs)
         {
             if (data.QuestID == id)
                 return data;
@@ -75,5 +73,10 @@ public class QuestManager : MonoBehaviour
             if (data.quest_id == id) return data;
         }
         return null;
+    }
+
+    internal void NextStep(Quest m_quest)
+    {
+        throw new NotImplementedException();
     }
 }

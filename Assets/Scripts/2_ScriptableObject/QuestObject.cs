@@ -18,8 +18,8 @@ public enum EConditionType
     Last
 }
 
-[CreateAssetMenu(fileName = "Quest", menuName = "ScriptableObjects/QuestScriptableObject", order = 1)]
-public class QuestScriptableObject : ScriptableObject
+//[CreateAssetMenu(fileName = "Quest", menuName = "ScriptableObjects/QuestScriptableObject", order = 1)]
+public class QuestObject : MonoBehaviour
 {
     public string QuestID { get { return name; } }
 
@@ -32,8 +32,10 @@ public class QuestScriptableObject : ScriptableObject
     [SerializeField,TextArea] private string m_context;
     public string Context { get => m_context; }
 
-    [SerializeField] private List<StepScriptableObject> m_Steps = new List<StepScriptableObject>();
-    public List<StepScriptableObject> Steps { get => m_Steps; }
+    [SerializeField] private List<StepBase> m_Steps = new List<StepBase>();
+    public List<StepBase> Steps { get => m_Steps; }
+
+
 
 
 }

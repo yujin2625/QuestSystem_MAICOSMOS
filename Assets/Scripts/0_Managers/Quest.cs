@@ -47,16 +47,16 @@ public class Quest
 
 
 
-    public Quest(string questID, EQuestType eQuestType, string title, string context, List<StepScriptableObject> steps, int currentStep,bool completed)
+    public Quest(string questID, EQuestType eQuestType, string title, string context, List<StepBase> steps, int currentStep,bool completed)
     {
         QuestID = questID;
         EQuestType = eQuestType;
         Title = title;
         Context = context;
         //Steps.Clear();
-        foreach (StepScriptableObject step in steps)
+        foreach (StepBase step in steps)
         {
-            Steps.Add(new Step(questID, step.Priority, step.IsCompleted, step.Condition, step.PositionStep, step.NumStep, step.InputStep, step.UIStep));
+            //Steps.Add(new Step(questID, step.Priority, step.IsCompleted, step.Condition, step.PositionStep, step.NumStep, step.InputStep, step.UIStep));
         }
         CurrentStep = currentStep;
         Completed = completed;
