@@ -26,7 +26,7 @@ public class DataLoader : MonoBehaviour
         else
         {
             m_returnedData = webRequest.downloadHandler.text ;
-            Debug.Log(m_returnedData);
+            //Debug.Log(m_returnedData);
         }
     }
 }

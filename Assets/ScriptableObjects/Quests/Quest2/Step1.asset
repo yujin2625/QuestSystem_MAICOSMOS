@@ -19,7 +19,7 @@ MonoBehaviour:
   m_positionStep:
     TriggerPrefab: {fileID: 0}
   m_numStep:
-    EConditionNum: 0
+    EConditionNum: 3
     ConditionNum: 3
   m_inputStep:
     PressedKey: 

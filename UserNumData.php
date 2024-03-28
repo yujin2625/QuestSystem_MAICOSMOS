@@ -22,34 +22,30 @@ session_start();
 // }
 
 $userid = "test1";
-
+//$userid = trim($_POST['userid']);
 $num_type = $_POST["NumType"];
-// $num_type = "mb_level";
-// echo $num_type;
+
+// $sql = "SELECT * FROM yj_mb_quest_num WHERE mb_id = '$userid'";
+// $stmt = $pdo->prepare($sql);
+// $stmt->execute();
+// $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// echo $result[0][$num_type];
+
 
 switch ($num_type) {
-    case "mb_level":
-        $sql = "SELECT mb_level FROM g5_member WHERE mb_id = '$userid'";
+    case "mb_point":        // g5_member 테이블
+        $sql = "SELECT * FROM g5_member WHERE mb_id = '$userid'";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // var_dump($result);
-        echo $result[0]['mb_level'];
+        echo $result[0][$num_type];
         break;
-    case "mb_point":
-        $sql = "SELECT mb_point FROM g5_member WHERE mb_id = '$userid'";
+    default:                // yj_mb_quest_num 테이블
+        $sql = "SELECT * FROM yj_mb_quest_num WHERE mb_id = '$userid'";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo $result[0]['mb_point'];
-        break;
-    case "mb_present":
-        $sql = "SELECT mb_present FROM yj_mb_quest_num WHERE mb_id = '$userid'"
-        break;
-    case "mb_present_week":
-        break;
-    case "mb_coin":
-        
+        echo $result[0][$num_type];
         break;
 
 }

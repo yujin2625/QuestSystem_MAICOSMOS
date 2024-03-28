@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class QuestUIManager : MonoBehaviour
 {
+    [Header("RectTransform")]
+    [SerializeField] private RectTransform RectTransform;
     [Header("Buttons")]
     [SerializeField] private RadioButtonGroup TypeRadioButtonGroup;
     [SerializeField] private RadioButtonGroup QuestRadioButtonGroup;
@@ -28,11 +30,12 @@ public class QuestUIManager : MonoBehaviour
     private List<Quest> m_WeeklyQuests = new List<Quest>();
     public void Awake()
     {
+        m_QuestList = QuestManager.instance.GetQuests();
         m_questDataSet = QuestDataManager.instance.QuestDataSet;
     }
-    public void OnClickQuest()
+
+    public void OnClickQuestTab()
     {
-        //QuestDataManager.instance.StartGetData();
         m_StartableQuests.Clear();
         m_StartedQuests.Clear();
         m_CompletedQuests.Clear();
@@ -40,13 +43,8 @@ public class QuestUIManager : MonoBehaviour
         m_WeeklyQuests.Clear();
         StartCoroutine(SetQuestUI());
     }
-    //public void OnClickQuestTab()
-    //{
-    //    StartCoroutine(SetQuestUI());
-    //}
     private IEnumerator SetQuestUI()
     {
-        m_QuestList = QuestManager.instance.GetQuests();
         yield return new WaitUntil(() => QuestDataManager.instance.QuestDataSet != null);
         m_questDataSet = QuestDataManager.instance.QuestDataSet;
         yield return new WaitForEndOfFrame();

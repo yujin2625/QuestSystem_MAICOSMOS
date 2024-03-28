@@ -13,9 +13,10 @@ public enum ECondition
 }
 public enum EConditionNumType
 {
-    mb_level,
     mb_point,
     mb_present,
+    mb_present_week,
+    mb_coin,
     last
 }
 

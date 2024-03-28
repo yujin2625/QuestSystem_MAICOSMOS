@@ -26,17 +26,12 @@ public class UserNumChecker : MonoBehaviour
     {
         string checkUserUrl = "https://maicosmos.com/yujin/UserNumData.php";
         WWWForm form = new WWWForm();
-        //Debug.LogError(eConditionNumType.ToString());
         form.AddField("NumType", eConditionNumType.ToString());
         UnityWebRequest webRequest = UnityWebRequest.Post(checkUserUrl, form);
         yield return webRequest.SendWebRequest();
         if (webRequest.error != null)
             Debug.LogError(webRequest.error);
-
-        //Debug.LogWarning(webRequest.downloadHandler.text);
-
         CurrentUserNum = Convert.ToInt32(webRequest.downloadHandler.text);
-
     }
 
     public void StartCheckUserNum(Quest _quest, EConditionNumType _eConditionNumType, int _conditionUserNum)
@@ -44,6 +39,17 @@ public class UserNumChecker : MonoBehaviour
         m_quest = _quest;
         EConditionNumType = _eConditionNumType;
         ConditionUserNum = _conditionUserNum;
+
+        PresentChecker();
+        
         StartCoroutine(CheckUserNum(EConditionNumType));
+    }
+
+    private void PresentChecker()        // 출석 관련 스텝 처리
+    {
+        if (EConditionNumType == EConditionNumType.mb_present || EConditionNumType == EConditionNumType.mb_present_week)
+        {
+            DataSender.Instance.StartAddQuestNumData(EConditionNumType, 1);
+        }
     }
 }

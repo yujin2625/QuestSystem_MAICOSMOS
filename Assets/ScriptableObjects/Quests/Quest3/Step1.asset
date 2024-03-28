@@ -19,8 +19,8 @@ MonoBehaviour:
   m_positionStep:
     TriggerPrefab: {fileID: 0}
   m_numStep:
-    EConditionNum: 0
-    ConditionNum: 0
+    EConditionNum: 1
+    ConditionNum: 1
   m_inputStep:
     PressedKey: 
   m_UIStep:
