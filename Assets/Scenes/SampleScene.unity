@@ -199,7 +199,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72995022}
-  m_LocalRotation: {x: 0.11559233, y: -0.00000001709104, z: 0.0000000019889252, w: 0.99329674}
+  m_LocalRotation: {x: 0.11559233, y: 0.000000017091047, z: -0.0000000019889261, w: 0.99329674}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -207,11 +207,64 @@ Transform:
   m_Father: {fileID: 1801173852}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &92279612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4703867614218458500, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+  m_PrefabInstance: {fileID: 651863276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &92279613 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4703867614218458499, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+  m_PrefabInstance: {fileID: 651863276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &99289808 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4703867615107977752, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
   m_PrefabInstance: {fileID: 651863276}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &139953521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 139953522}
+  - component: {fileID: 139953523}
+  m_Layer: 0
+  m_Name: QuestDataContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &139953522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139953521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 181981056}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &139953523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139953521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0815630a6022af46892338e64ea8d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &181981053
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,11 +274,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 181981056}
-  - component: {fileID: 181981055}
   - component: {fileID: 181981054}
   - component: {fileID: 181981057}
   - component: {fileID: 181981058}
   - component: {fileID: 181981059}
+  - component: {fileID: 181981055}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -245,7 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77ba09419a0cb440b86c4261d2b0db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumCheckerPrefab: {fileID: 4634845900432539533, guid: 503b678a5cba0364fbc5808dd4d3684b, type: 3}
 --- !u!114 &181981055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,14 +307,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 181981053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd91ab0f8080c040acbbf56b6258de7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e19b67a2848b1d4491f7266aedfc076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_scriptableQuests:
+  DataLoader: {fileID: 1345410509}
+  QuestSOs:
   - {fileID: 11400000, guid: 5315a345045ae024cb35176131a595c2, type: 2}
   - {fileID: 11400000, guid: 3accbcfa75ab3764da0bbc67e0ccd443, type: 2}
   - {fileID: 11400000, guid: b79f6605b4050a74683fd36d1231e281, type: 2}
   - {fileID: 11400000, guid: 4d3d53a6e8693324d92a26814215b4e5, type: 2}
+  QuestDataSet:
+    QuestDatas: []
   Quests: []
 --- !u!4 &181981056
 Transform:
@@ -277,6 +332,7 @@ Transform:
   m_Children:
   - {fileID: 1345410508}
   - {fileID: 423673553}
+  - {fileID: 139953522}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -319,6 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410d9f723f12d8d43ba6d0474f0046e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RectTransform: {fileID: 92279613}
   TypeRadioButtonGroup: {fileID: 1707412500}
   QuestRadioButtonGroup: {fileID: 826715697}
   QuestButtons:
@@ -924,7 +981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54f436b758586e44b24f113912a0d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendURL: https://maicosmos.com/yujin/AddQuestData.php
+  SendQuestDataURL: https://maicosmos.com/yujin/AddQuestData.php
+  SendQuestNumDataURL: https://maicosmos.com/yujin/UpdateUserNumData.php
 --- !u!1 &459424672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,10 +1240,18 @@ PrefabInstance:
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 181981059}
+    - target: {fileID: 39353329, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickQuestTab
+      objectReference: {fileID: 0}
     - target: {fileID: 508389639, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 181981059}
+    - target: {fileID: 508389639, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickQuestTab
+      objectReference: {fileID: 0}
     - target: {fileID: 565510439, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1202,10 +1268,34 @@ PrefabInstance:
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 181981059}
+    - target: {fileID: 1025192159, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickQuestTab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160819512, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160819512, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1160819512, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 181981059}
+      objectReference: {fileID: 92279612}
+    - target: {fileID: 1160819512, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160819512, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160819512, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1508792323, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1214,10 +1304,18 @@ PrefabInstance:
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 181981059}
+    - target: {fileID: 1865522352, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickQuestTab
+      objectReference: {fileID: 0}
     - target: {fileID: 1923040511, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 181981059}
+    - target: {fileID: 1923040511, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
+      propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickQuestTab
+      objectReference: {fileID: 0}
     - target: {fileID: 1941986053, guid: 60272f6632a027548a3d9e74cb12d53e, type: 3}
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1953,7 +2051,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.11559233, y: -0.000000034182086, z: 0.0000000039778514, w: 0.9932968}
+  m_LocalRotation: {x: 0.11559233, y: 0.00000003418209, z: -0.000000003977852, w: 0.9932968}
   m_LocalPosition: {x: 0, y: 3, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2625,7 +2723,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772734730}
-  m_LocalRotation: {x: 0.09252102, y: 0.000000017659856, z: -0.0000000016409463, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: -0.000000017659858, z: 0.0000000016409465, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
