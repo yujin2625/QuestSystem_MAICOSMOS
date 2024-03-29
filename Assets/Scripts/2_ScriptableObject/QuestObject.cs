@@ -18,7 +18,6 @@ public enum EConditionType
     Last
 }
 
-//[CreateAssetMenu(fileName = "Quest", menuName = "ScriptableObjects/QuestScriptableObject", order = 1)]
 public class QuestObject : MonoBehaviour
 {
     public string QuestID { get { return name; } }
@@ -45,7 +44,6 @@ public class QuestObject : MonoBehaviour
 
     public void nextStep()
     {
-        // curentStepIndex
         curentStepIndex++;
         transform.GetChild(curentStepIndex);
     }

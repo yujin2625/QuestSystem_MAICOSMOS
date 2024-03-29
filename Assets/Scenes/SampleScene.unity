@@ -199,7 +199,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72995022}
-  m_LocalRotation: {x: 0.11559233, y: 0.000000017091047, z: -0.0000000019889261, w: 0.99329674}
+  m_LocalRotation: {x: 0.11559233, y: -0.00000001709104, z: 0.0000000019889252, w: 0.99329674}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2054,7 +2054,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.11559233, y: 0.00000003418209, z: -0.000000003977852, w: 0.9932968}
+  m_LocalRotation: {x: 0.11559233, y: -0.000000034182086, z: 0.0000000039778514, w: 0.9932968}
   m_LocalPosition: {x: 0, y: 3, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2726,7 +2726,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772734730}
-  m_LocalRotation: {x: 0.09252102, y: -0.000000017659858, z: 0.0000000016409465, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: 0.000000017659856, z: -0.0000000016409463, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3194,6 +3194,18 @@ PrefabInstance:
     - target: {fileID: 5452352720922909595, guid: 2277fc39a38c10d4b9611b0d4f58df5a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949338137769677938, guid: 2277fc39a38c10d4b9611b0d4f58df5a, type: 3}
+      propertyPath: m_title
+      value: "\uC774\uB3D9 \uD29C\uD1A0\uB9AC\uC5BC"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949338137769677938, guid: 2277fc39a38c10d4b9611b0d4f58df5a, type: 3}
+      propertyPath: m_context
+      value: "1. WASD \uD639\uC740 \uD654\uC0B4\uD45C \uD0A4\uB97C \uD65C\uC6A9\uD558\uC5EC
+        \uBE68\uAC04\uC0C9 \uD050\uBE0C\uB85C \uC774\uB3D9\uD558\uC138\uC694.\n\n2.
+        \uC2A4\uD398\uC774\uC2A4\uBC14\uB85C \uC810\uD504\uD558\uC5EC \uD30C\uB780\uC0C9
+        \uD050\uBE0C\uB85C \uC774\uB3D9\uD558\uC138\uC694.\n\n3. \uB9C8\uC6B0\uC2A4\uB97C
+        \uC6C0\uC9C1\uC5EC \uAC80\uC740\uC0C9 \uD050\uBE0C\uB97C \uCC3E\uC544 \uC774\uB3D9\uD558\uC138\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 5949338137769677938, guid: 2277fc39a38c10d4b9611b0d4f58df5a, type: 3}
       propertyPath: m_Steps.Array.size
