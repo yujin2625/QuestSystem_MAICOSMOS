@@ -45,7 +45,23 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public ESpace PlayerSpace
+    {
+        get
+        {
+            // 임시
+            return ESpace.lobby;
+        }
+    }
 
+    public int PlayerLevel
+    {
+        get
+        {
+            // 임시
+            return 10;
+        }
+    }
     #endregion
 
 

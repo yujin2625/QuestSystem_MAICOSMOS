@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 975fcf2d21c390541b8d569946a02e1e
+guid: 815bb48c0bacd4c418cd4ff2ef3d5fee
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -10,5 +10,5 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 8404be70184654265930450def6a9037, type: 3}
   generateWrapperCode: 0
   wrapperCodePath: 
-  wrapperClassName: PlayerInputAction
+  wrapperClassName: 
   wrapperCodeNamespace: 
